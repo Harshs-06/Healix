@@ -46,6 +46,7 @@ public class home_page extends AppCompatActivity {
             return insets;
         });
     }
+    //trying push
     private void animateHint() {
         handler.postDelayed(new Runnable() {
             @Override
