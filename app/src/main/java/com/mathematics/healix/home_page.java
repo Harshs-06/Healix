@@ -19,6 +19,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.viewpager2.widget.ViewPager2;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class home_page extends AppCompatActivity {
     private EditText searchBar;
@@ -39,6 +43,17 @@ public class home_page extends AppCompatActivity {
 
         searchBar = findViewById(R.id.searchBar);
         animateHint();
+
+
+        ViewPager2 carousel_pager = findViewById(R.id.carousel_pager);
+        List<home_carousel_item> items = new ArrayList<>();
+        items.add(new home_carousel_item("10d ago", "Asked for Male", "28 Years, Bangalore", "Feeling rod post surgery", "I am having bp machine..."));
+        items.add(new home_carousel_item("10d ago", "Asked for Male", "28 Years, Bangalore", "Feeling rod post surgery", "I am having bp machine..."));
+        items.add(new home_carousel_item("10d ago", "Asked for Male", "28 Years, Bangalore", "Feeling rod post surgery", "I am having bp machine..."));
+        items.add(new home_carousel_item("10d ago", "Asked for Male", "28 Years, Bangalore", "Feeling rod post surgery", "I am having bp machine..."));
+        items.add(new home_carousel_item("10d ago", "Asked for Male", "28 Years, Bangalore", "Feeling rod post surgery", "I am having bp machine..."));
+        home_carousel_adapter carouselAdapter = new home_carousel_adapter(items);
+        carousel_pager.setAdapter(carouselAdapter);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());

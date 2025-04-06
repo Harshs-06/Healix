@@ -194,11 +194,47 @@
                     android:text="Free expert answers to your health questions" />
 
                 <androidx.viewpager2.widget.ViewPager2
-                    android:layout_width="match_parent"
+                    android:id="@+id/carousel_pager"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:clipToPadding="false"/>
+                        android:overScrollMode="always"
+                        android:clipToPadding="false"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_marginTop="5dp"
+                    android:layout_width="337dp"
+                    app:backgroundTint="@null"
+                    app:strokeWidth="1dp"
+                    android:text="Ask A free Question"
+                    tools:ignore="HardcodedText"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/black"
+                    app:rippleColor="#CAC9C9"
+                    app:strokeColor="#A2A2A2"
+                    android:backgroundTint="@color/white"
+                    app:cornerRadius="5dp"
+                    android:layout_height="55dp"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/underlined_text"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="5dp"
+                    android:textSize="17sp"/>
 
             </LinearLayout>
+
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
 
         </LinearLayout>
     </ScrollView>

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Healix</string>
+    <string name="underlined_text"><u>Read Trending Questions</u></string>
+
 </resources>
