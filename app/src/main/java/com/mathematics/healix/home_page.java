@@ -12,6 +12,7 @@ import android.os.Handler;
 import android.view.Window;
 import android.view.animation.LinearInterpolator;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -21,7 +22,10 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class home_page extends AppCompatActivity {
@@ -33,6 +37,7 @@ public class home_page extends AppCompatActivity {
     private boolean deleting = false;
     private Handler handler = new Handler();
     private long delay = 100; // Typing speed
+    BottomNavigationView bottomNav;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,12 +53,57 @@ public class home_page extends AppCompatActivity {
         ViewPager2 carousel_pager = findViewById(R.id.carousel_pager);
         List<home_carousel_item> items = new ArrayList<>();
         items.add(new home_carousel_item("10d ago", "Asked for Male", "28 Years, Bangalore", "Feeling rod post surgery", "I am having bp machine..."));
-        items.add(new home_carousel_item("10d ago", "Asked for Male", "28 Years, Bangalore", "Feeling rod post surgery", "I am having bp machine..."));
+        items.add(new home_carousel_item("2w ago", "Asked for Male", "28 Years, Bangalore", "Feeling rod post surgery", "I am having bp machine..."));
         items.add(new home_carousel_item("10d ago", "Asked for Male", "28 Years, Bangalore", "Feeling rod post surgery", "I am having bp machine..."));
         items.add(new home_carousel_item("10d ago", "Asked for Male", "28 Years, Bangalore", "Feeling rod post surgery", "I am having bp machine..."));
         items.add(new home_carousel_item("10d ago", "Asked for Male", "28 Years, Bangalore", "Feeling rod post surgery", "I am having bp machine..."));
         home_carousel_adapter carouselAdapter = new home_carousel_adapter(items);
         carousel_pager.setAdapter(carouselAdapter);
+
+
+        bottomNav =findViewById(R.id.bottomNavigationView);
+        bottomNav.setSelectedItemId(R.id.nav_home);
+
+        bottomNav.setOnItemSelectedListener(item -> {
+            int id = item.getItemId();
+                    if (id == R.id.nav_home) {
+
+                        return true;
+                    }else if (id == R.id.nav_lab) {
+                        Intent intent = new Intent(this, home_lab_test.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                        startActivity(intent);
+
+                        return true;
+                    }
+            return false;
+        });
+
+
+        TextView greetingText = findViewById(R.id.greetingText);
+        TextView greetingDescription = findViewById(R.id.greetingDescription);
+        ImageView greetingImg = findViewById(R.id.greetingImg);
+        Calendar calendar = Calendar.getInstance();
+        int hour = calendar.get(Calendar.HOUR_OF_DAY);
+
+        if (hour >= 5 && hour < 10) {
+            greetingText.setText("It’s Time for Breakfast!");
+            greetingDescription.setText("Good morning! Let’s kickstart your day with a \nhealthy breakfast.");
+            greetingImg.setImageResource(R.drawable.food_img);
+        } else if (hour >= 12 && hour < 15) {
+            greetingText.setText("It’s Time for Lunch!");
+            greetingDescription.setText("Your breakfast was a bit light today ! Let’s boost your energy with a delicious lunch.");
+            greetingImg.setImageResource(R.drawable.food_img);
+        } else if (hour >= 19 && hour < 22) {
+            greetingText.setText("It’s Time for Dinner!");
+            greetingDescription.setText("It’s dinner time! Unwind and recharge with\n a wholesome meal.");
+            greetingImg.setImageResource(R.drawable.food_img);
+        } else {
+            greetingText.setText("Stay Hydrated!");
+            greetingDescription.setText("Don’t forget to stay hydrated ! Your body will thank you for it.");
+            greetingImg.setImageResource(R.drawable.water_icon);
+        }
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -61,6 +111,7 @@ public class home_page extends AppCompatActivity {
             return insets;
         });
     }
+
     //trying push
     private void animateHint() {
         handler.postDelayed(new Runnable() {
@@ -86,5 +137,11 @@ public class home_page extends AppCompatActivity {
                 }
             }
         }, delay);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        bottomNav.setSelectedItemId(R.id.nav_home);
     }
 }

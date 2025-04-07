@@ -54,7 +54,9 @@
                     android:id="@+id/searchBar"
                     android:layout_width="320dp"
                     android:layout_height="50dp"
-
+                    android:maxLines="1"
+                    android:inputType="text"
+                    android:imeOptions="actionDone"
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/search_bar_design"
@@ -74,6 +76,8 @@
                 <LinearLayout
                     android:layout_marginTop="10dp"
                     android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -89,10 +93,11 @@
                             android:fontFamily="@font/poppins_semibold"
                             android:textColor="@color/black"
                             android:textSize="25sp"
-
+                            android:id="@+id/greetingText"
                             android:text="It’s Time for Lunch!"
                             tools:ignore="HardcodedText" />
                         <ImageView
+                            android:id="@+id/greetingImg"
                             android:layout_marginStart="10dp"
                             android:layout_marginTop="-2dp"
                             android:layout_width="30dp"
@@ -106,7 +111,7 @@
                         android:layout_marginTop="-5dp"
                         android:fontFamily="@font/poppins_light"
                         android:text="Your breakfast was a bit light today! \nLet’s boost your energy with a delicious lunch."
-
+                        android:id="@+id/greetingDescription"
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         tools:ignore="HardcodedText" />
