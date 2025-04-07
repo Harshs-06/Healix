@@ -100,7 +100,7 @@ public class home_page extends AppCompatActivity {
             greetingImg.setImageResource(R.drawable.food_img);
         } else {
             greetingText.setText("Stay Hydrated!");
-            greetingDescription.setText("Don’t forget to stay hydrated ! Your body will thank you for it.");
+            greetingDescription.setText("Don’t forget to stay hydrated ! Your body will thank you for it. ");
             greetingImg.setImageResource(R.drawable.water_icon);
         }
 
