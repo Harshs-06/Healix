@@ -20,6 +20,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -50,15 +52,30 @@ public class home_page extends AppCompatActivity {
         animateHint();
 
 
-        ViewPager2 carousel_pager = findViewById(R.id.carousel_pager);
+        RecyclerView carouselRecycler = findViewById(R.id.carousel_recycler);
         List<home_carousel_item> items = new ArrayList<>();
         items.add(new home_carousel_item("10d ago", "Asked for Male", "28 Years, Bangalore", "Feeling rod post surgery", "I am having bp machine..."));
         items.add(new home_carousel_item("2w ago", "Asked for Male", "28 Years, Bangalore", "Feeling rod post surgery", "I am having bp machine..."));
         items.add(new home_carousel_item("10d ago", "Asked for Male", "28 Years, Bangalore", "Feeling rod post surgery", "I am having bp machine..."));
         items.add(new home_carousel_item("10d ago", "Asked for Male", "28 Years, Bangalore", "Feeling rod post surgery", "I am having bp machine..."));
         items.add(new home_carousel_item("10d ago", "Asked for Male", "28 Years, Bangalore", "Feeling rod post surgery", "I am having bp machine..."));
-        home_carousel_adapter carouselAdapter = new home_carousel_adapter(items);
-        carousel_pager.setAdapter(carouselAdapter);
+        home_carousel_adapter adapter = new home_carousel_adapter(items);
+        carouselRecycler.setAdapter(adapter);
+
+
+
+
+
+
+
+
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        carouselRecycler.setLayoutManager(layoutManager);
+        carouselRecycler.setPadding(40, 0, 40, 0);
+        carouselRecycler.setClipToPadding(false);
+        carouselRecycler.setClipChildren(false);
+
 
 
         bottomNav =findViewById(R.id.bottomNavigationView);

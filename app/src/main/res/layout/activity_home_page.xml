@@ -77,7 +77,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_gravity="center"
                     android:layout_marginStart="10dp"
-                    android:layout_marginEnd="5dp"
+                    android:layout_marginEnd="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -198,12 +198,17 @@
                     tools:ignore="HardcodedText"
                     android:text="Free expert answers to your health questions" />
 
-                <androidx.viewpager2.widget.ViewPager2
-                    android:id="@+id/carousel_pager"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/carousel_recycler"
                     android:layout_width="wrap_content"
+                    android:layout_marginStart="-10dp"
                     android:layout_height="wrap_content"
-                        android:overScrollMode="always"
-                        android:clipToPadding="false"/>
+                    android:clipToPadding="false"
+                    android:paddingStart="40dp"
+                    android:paddingEnd="40dp"
+                    android:overScrollMode="never"
+                    />
+
 
                 <com.google.android.material.button.MaterialButton
                     android:layout_marginTop="5dp"

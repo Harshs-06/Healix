@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+    android:layout_width="300dp"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_margin="8dp"
+
     app:cardCornerRadius="12dp"
     app:strokeColor="@android:color/transparent"
     app:cardElevation="8dp"
@@ -62,7 +63,7 @@
                 android:textSize="15sp"
                 tools:ignore="HardcodedText"
                 android:text="10d ago"
-                android:layout_marginStart="120dp"
+                android:layout_marginStart="72dp"
                 android:layout_marginTop="-10dp"
                 android:fontFamily="@font/poppins_medium"
                 android:textColor="#686666"
@@ -84,7 +85,7 @@
 
         <TextView
             android:id="@+id/detail"
-            android:layout_marginEnd="10dp"
+
             android:layout_marginTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
