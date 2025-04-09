@@ -21,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:fontFamily="@font/poppins_semibold"
+        android:fontFamily="@font/poppins_extrabold"
         android:text="@string/screen1"
         android:textAlignment="center"
         android:textColor="@color/white"

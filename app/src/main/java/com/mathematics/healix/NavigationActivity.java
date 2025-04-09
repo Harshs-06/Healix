@@ -1,6 +1,7 @@
 package com.mathematics.healix;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.viewpager.widget.ViewPager;
 
 import com.mathematics.healix.GetStarted;
@@ -20,7 +22,7 @@ public class NavigationActivity extends AppCompatActivity {
     LinearLayout dotIndicator;
     Button backButton, nextButton, skipButton;
     TextView[] dots;
-    com.example.onboardingpractice.ViewPagerAdapter viewPagerAdapter;
+    com.mathematics.healix.ViewPagerAdapter viewPagerAdapter;
 
 
     ViewPager.OnPageChangeListener viewPagerListener = new ViewPager.OnPageChangeListener() {
@@ -93,7 +95,7 @@ public class NavigationActivity extends AppCompatActivity {
         slideViewPager = (ViewPager) findViewById(R.id.slideViewPager);
         dotIndicator = (LinearLayout) findViewById(R.id.dotIndicator);
 
-        viewPagerAdapter = new com.example.onboardingpractice.ViewPagerAdapter(this);
+        viewPagerAdapter = new com.mathematics.healix.ViewPagerAdapter(this);
         slideViewPager.setAdapter(viewPagerAdapter);
 
         setDotIndicator(0);
@@ -109,7 +111,9 @@ public class NavigationActivity extends AppCompatActivity {
             dots[i] = new TextView(this);
             dots[i].setText(Html.fromHtml("&#8226", Html.FROM_HTML_MODE_LEGACY));
             dots[i].setTextSize(35);
-            dots[i].setTextColor(getResources().getColor(R.color.black, getApplicationContext().getTheme()));
+            dots[i].setTextColor(getResources().getColor(R.color.white, getApplicationContext().getTheme()));
+            Typeface typeface = ResourcesCompat.getFont(this,R.font.poppins_bold);
+            dots[i].setTypeface(typeface);
             dotIndicator.addView(dots[i]);
         }
         dots[position].setTextColor(getResources().getColor(R.color.orange, getApplicationContext().getTheme()));
