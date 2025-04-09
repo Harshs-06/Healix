@@ -1,4 +1,4 @@
-package com.example.onboardingpractice;
+package com.mathematics.healix;
 
 import android.content.Context;
 import android.view.LayoutInflater;
