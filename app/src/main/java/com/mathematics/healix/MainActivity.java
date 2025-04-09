@@ -61,7 +61,8 @@ public class MainActivity extends AppCompatActivity {
             animator.start();
         });
 
-        appTitle.setOnClickListener(v -> startActivity(new Intent(MainActivity.this,home_page.class)));
+        appTitle.setOnClickListener(v -> startActivity(new Intent(MainActivity.this,NavigationActivity.class)));
+
 
 
 

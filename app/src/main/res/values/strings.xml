@@ -2,4 +2,13 @@
     <string name="app_name">Healix</string>
     <string name="underlined_text"><u>Read Trending Questions</u></string>
 
+    <string name="screen1">Hello</string>
+    <string name="screen2">Hi</string>
+    <string name="screen3">How</string>
+
+    <string name="screen1desc">Video consult top doctors from the comfort of your home</string>
+    <string name="screen2desc">Read patient’s stories and book doctor appointments</string>
+    <string name="screen3desc">1 Crore Indians connect with doctor every year on healix</string>
+
+    <string name="startDesc">Lets start</string>
 </resources>
