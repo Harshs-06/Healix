@@ -104,7 +104,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
-
+            app:itemActiveIndicatorStyle="@style/BottomNavIndicator"
             app:itemIconTint="@color/nav_icon_color"
             app:itemRippleColor="@color/nav_ripple"
             app:labelVisibilityMode="unlabeled"

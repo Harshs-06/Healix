@@ -1,6 +1,7 @@
 package com.mathematics.healix;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.mathematics.healix.R;
@@ -61,6 +63,9 @@ public class ViewPagerAdapter extends PagerAdapter {
 
         sliderImage.setImageResource(sliderAllImages[position]);
         sliderTitle.setText(this.sliderAllTitle[position]);
+        Typeface typeface = ResourcesCompat.getFont(context,R.font.poppins_extrabold);
+        sliderTitle.setTypeface(typeface);
+
         sliderDesc.setText(this.sliderAllDesc[position]);
 
         container.addView(view);
