@@ -42,7 +42,10 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     implementation("androidx.viewpager2:viewpager2:1.0.0")
     implementation("androidx.recyclerview:recyclerview:1.2.1")
+    implementation("androidx.work:work-runtime:2.8.1")
+
     androidTestImplementation(libs.espresso.core)
     implementation("com.google.android.material:material:1.9.0")
+    implementation("com.mikhaellopez:circularprogressbar:3.1.0")
 
 }
