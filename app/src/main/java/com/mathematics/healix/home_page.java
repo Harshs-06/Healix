@@ -9,6 +9,7 @@ import android.graphics.Shader;
 import android.graphics.SweepGradient;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
 import android.view.Window;
 import android.view.animation.LinearInterpolator;
 import android.widget.EditText;
@@ -25,6 +26,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.card.MaterialCardView;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -32,6 +34,7 @@ import java.util.List;
 
 public class home_page extends AppCompatActivity {
     private EditText searchBar;
+    private MaterialCardView stepCountButton;
     private final String[] hints = {"Search for doctors", "Find lab tests", "Make your diet plan"};
 
     private int hintIndex = 0;
@@ -70,6 +73,7 @@ public class home_page extends AppCompatActivity {
 
 
 
+
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         carouselRecycler.setLayoutManager(layoutManager);
         carouselRecycler.setPadding(40, 0, 40, 0);
@@ -95,6 +99,30 @@ public class home_page extends AppCompatActivity {
                     }
             return false;
         });
+
+
+        //Step count  button
+        MaterialCardView stepCountButton = findViewById(R.id.stepCountButton);
+
+        stepCountButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(home_page.this, StepTrackerActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         TextView greetingText = findViewById(R.id.greetingText);
