@@ -143,6 +143,7 @@
                         android:layout_height="120dp"
                         app:cardBackgroundColor="#BCECD6"
                         app:cardCornerRadius="20dp"
+                        android:id="@+id/stepCountButton"
                         app:strokeColor="@android:color/transparent" />
 
                     <com.google.android.material.card.MaterialCardView
