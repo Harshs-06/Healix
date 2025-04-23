@@ -42,6 +42,12 @@ public class healthCheckups extends AppCompatActivity {
             }else if (id == R.id.nav_lab) {
 
                 return true;
+            }else if (id==R.id.nav_community) {
+                Intent intent = new Intent(this,CommunityForum.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                return true;
+
             }
             return false;
         });

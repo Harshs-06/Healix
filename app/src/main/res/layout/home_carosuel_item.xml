@@ -29,7 +29,7 @@
                  android:src="@drawable/prof1"
                  android:layout_height="50dp"/>
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="170dp"
                 android:layout_marginStart="5dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -63,7 +63,7 @@
                 android:textSize="15sp"
                 tools:ignore="HardcodedText"
                 android:text="10d ago"
-                android:layout_marginStart="72dp"
+
                 android:layout_marginTop="-10dp"
                 android:fontFamily="@font/poppins_medium"
                 android:textColor="#686666"

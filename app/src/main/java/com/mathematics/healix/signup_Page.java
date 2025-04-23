@@ -38,15 +38,10 @@ public class signup_Page extends AppCompatActivity {
             }
         });
 
-        textView4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(signup_Page.this, login_Page.class);
-                startActivity(intent);
-                finish();
-
-
-            }
+        textView4.setOnClickListener(v ->  {
+            Intent intent = new Intent(signup_Page.this, login_Page.class);
+            startActivity(intent);
+            finish();
         });
 
 

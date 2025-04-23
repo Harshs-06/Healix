@@ -1,5 +1,7 @@
 package com.mathematics.healix;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,6 +49,16 @@ public class home_carousel_adapter extends RecyclerView.Adapter<home_carousel_ad
         holder.place.setText(item.getPlace());
         holder.problem.setText(item.getProblem());
         holder.detail.setText(item.getDetail());
+
+
+        holder.itemView.setOnClickListener(v -> {
+
+            Context context = v.getContext();
+
+            Intent intent = new Intent(context, questions_answers_by_expert.class); // Replace with your new activity
+
+            context.startActivity(intent);
+        });
     }
 
     @Override

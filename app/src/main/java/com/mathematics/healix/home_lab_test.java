@@ -102,22 +102,27 @@ public class home_lab_test extends AppCompatActivity {
         LabChoiceModel_Adapter labChoiceModel_adapter = new LabChoiceModel_Adapter(choiceList);
 
         labChoiceModel_adapter.setOnItemClickListener(item -> {
+            Intent intent;
             switch (item.getTitle()) {
                 case "Health Checkups":
-                    Intent intent = new Intent(this, healthCheckups.class);
+                     intent = new Intent(this, healthCheckups.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                     startActivity(intent);
                     break;
                 case "Lab Tests":
-                    Intent intent2 = new Intent(this, lab_tests.class);
-                    intent2.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                    startActivity(intent2);
+                    intent = new Intent(this, lab_tests.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                    startActivity(intent);
                     break;
                 case "Download Report":
-//                    startActivity(new Intent(this, DownloadReportActivity.class));
+                    intent = new Intent(this, downloadReport.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                    startActivity(intent);
                     break;
                 case "Track Sample":
-//                    startActivity(new Intent(this, TrackSampleActivity.class));
+                    intent = new Intent(this, trackSample.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                    startActivity(intent);
                     break;
             }
         });

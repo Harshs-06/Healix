@@ -9,6 +9,7 @@ import android.graphics.Paint;
 import android.graphics.Shader;
 import android.graphics.SweepGradient;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -26,12 +27,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ImageView appTitle = findViewById(R.id.app_title);
+        //ImageView appTitle = findViewById(R.id.app_title);
 
 
-        appTitle.setOnClickListener(v -> startActivity(new Intent(MainActivity.this,NavigationActivity.class)));
+       // appTitle.setOnClickListener(v -> startActivity(new Intent(MainActivity.this,NavigationActivity.class)));
 
-
+         new Handler().postDelayed(()->{
+             startActivity(new Intent(MainActivity.this, NavigationActivity.class));
+             finish();
+         },5000);
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {

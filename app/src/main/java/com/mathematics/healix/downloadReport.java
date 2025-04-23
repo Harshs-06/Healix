@@ -10,31 +10,24 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class lab_tests extends AppCompatActivity {
+public class downloadReport extends AppCompatActivity {
     BottomNavigationView bottomNav;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_lab_tests);
+        setContentView(R.layout.activity_download_report);
         Window window = getWindow();
         window.setStatusBarColor(getResources().getColor(R.color.blue));
-
-        ImageButton backButton2 = findViewById(R.id.backButton2);
-        backButton2.setOnClickListener(v -> {
+        ImageButton backButton4 = findViewById(R.id.backButton4);
+        backButton4.setOnClickListener(v -> {
             Intent intent = new Intent(this, home_lab_test.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(intent);
         });
-
         bottomNav =findViewById(R.id.bottomNavigationView);
         bottomNav.setSelectedItemId(R.id.nav_lab);
         bottomNav.setOnItemSelectedListener(item -> {
@@ -58,25 +51,6 @@ public class lab_tests extends AppCompatActivity {
             return false;
         });
 
-        RecyclerView labtests_recyclerview = findViewById(R.id.labtests_recyclerview);
-        labtests_recyclerview.setLayoutManager(new LinearLayoutManager(this));
-
-        List<LabTestItem> labTestItems= new ArrayList<>();
-        labTestItems.add(new LabTestItem("Albumin - Serum", "No preparation needed", "All", "All", "8 Hours", "₹1999", "₹2999", "You saved 33%"));
-        labTestItems.add(new LabTestItem("Albumin - Serum", "No preparation needed", "All", "All", "8 Hours", "₹1999", "₹2999", "You saved 33%"));
-        labTestItems.add(new LabTestItem("Albumin - Serum", "No preparation needed", "All", "All", "8 Hours", "₹1999", "₹2999", "You saved 33%"));
-        labTestItems.add(new LabTestItem("Albumin - Serum", "No preparation needed", "All", "All", "8 Hours", "₹1999", "₹2999", "You saved 33%"));
-        labTestItems.add(new LabTestItem("Albumin - Serum", "No preparation needed", "All", "All", "8 Hours", "₹1999", "₹2999", "You saved 33%"));
-        labTestItems.add(new LabTestItem("Albumin - Serum", "No preparation needed", "All", "All", "8 Hours", "₹1999", "₹2999", "You saved 33%"));
-        labTestItems.add(new LabTestItem("Albumin - Serum", "No preparation needed", "All", "All", "8 Hours", "₹1999", "₹2999", "You saved 33%"));
-        labTestItems.add(new LabTestItem("Albumin - Serum", "No preparation needed", "All", "All", "8 Hours", "₹1999", "₹2999", "You saved 33%"));
-        labTestItems.add(new LabTestItem("Albumin - Serum", "No preparation needed", "All", "All", "8 Hours", "₹1999", "₹2999", "You saved 33%"));
-        labTestItems.add(new LabTestItem("Albumin - Serum", "No preparation needed", "All", "All", "8 Hours", "₹1999", "₹2999", "You saved 33%"));
-
-
-
-        LabTestAdapter labTestAdapter = new LabTestAdapter(this,labTestItems);
-        labtests_recyclerview.setAdapter(labTestAdapter);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());

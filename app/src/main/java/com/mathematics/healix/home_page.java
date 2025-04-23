@@ -26,6 +26,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
 
 import java.util.ArrayList;
@@ -65,7 +66,12 @@ public class home_page extends AppCompatActivity {
         home_carousel_adapter adapter = new home_carousel_adapter(items);
         carouselRecycler.setAdapter(adapter);
 
-
+        MaterialButton askyourquestion = findViewById(R.id.askyourquestion);
+        askyourquestion.setOnClickListener(v -> {
+            Intent intent = new Intent(this, ask_free_question_activity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivity(intent);
+        });
 
 
 

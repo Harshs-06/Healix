@@ -11,4 +11,10 @@
     <string name="screen3desc">1 Crore Indians connect with doctor every year on healix</string>
 
     <string name="startDesc">Lets start</string>
+
+    <string-array name="for_profile">
+        <item>Select a profile</item>
+        <item>Asked for Male</item>
+        <item>Asked for Female</item>
+    </string-array>
 </resources>
