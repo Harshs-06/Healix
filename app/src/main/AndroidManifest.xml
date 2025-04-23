@@ -16,17 +16,37 @@
         android:theme="@style/Theme.Healix"
         tools:targetApi="31">
         <activity
+            android:name=".lab_tests"
+            android:exported="false" />
+        <activity
+            android:name=".CommunityForum"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".healthCheckups"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".GetStarted"
             android:exported="false" />
         <activity
             android:name=".NavigationActivity"
-            android:exported="false" />
-<!--        <activity-->
-<!--            android:name=".onboardingActivity"-->
-<!--            android:exported="false" />-->
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".onboardingActivity" -->
+        <!-- android:exported="false" /> -->
         <activity
             android:name=".home_lab_test"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".signup_page"
             android:exported="false" />
@@ -36,21 +56,17 @@
         <activity
             android:name=".home_page"
             android:exported="false">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
-                        <intent-filter>
-                            <action android:name="android.intent.action.MAIN" />
-
-                            <category android:name="android.intent.category.LAUNCHER" />
-                        </intent-filter>
-        </activity>
+            android:exported="true" />
 
         <meta-data
             android:name="preloaded_fonts"

@@ -16,9 +16,9 @@
        android:title="Diet"/>
 
    <item
-       android:id="@+id/nav_support"
+       android:id="@+id/nav_community"
        android:icon="@drawable/selector_nav_support"
-       android:title="Support"/>
+       android:title="Community"/>
 
    <item
        android:id="@+id/nav_settings"
