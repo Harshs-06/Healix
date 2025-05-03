@@ -144,7 +144,14 @@
                         app:cardBackgroundColor="#BCECD6"
                         app:cardCornerRadius="20dp"
                         android:id="@+id/stepCountButton"
-                        app:strokeColor="@android:color/transparent" />
+                        app:strokeColor="@android:color/transparent" >
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/steps_icon"/>
+                    </com.google.android.material.card.MaterialCardView>
 
                     <com.google.android.material.card.MaterialCardView
                         android:layout_width="160dp"
@@ -152,7 +159,14 @@
                         android:layout_marginStart="15dp"
                         app:cardBackgroundColor="#D7DDFF"
                         app:cardCornerRadius="20dp"
-                        app:strokeColor="@android:color/transparent" />
+                        app:strokeColor="@android:color/transparent" >
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="center"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/sleep_icon"/>
+                    </com.google.android.material.card.MaterialCardView>
 
                 </LinearLayout>
 
@@ -168,7 +182,14 @@
                         android:layout_height="120dp"
                         app:cardBackgroundColor="#FFE3E2"
                         app:cardCornerRadius="20dp"
-                        app:strokeColor="@android:color/transparent" />
+                        app:strokeColor="@android:color/transparent" >
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/heart_icon"/>
+                    </com.google.android.material.card.MaterialCardView>
 
                     <com.google.android.material.card.MaterialCardView
                         android:layout_width="160dp"
@@ -176,7 +197,14 @@
                         android:layout_marginStart="15dp"
                         app:cardBackgroundColor="#FFEFD8"
                         app:cardCornerRadius="20dp"
-                        app:strokeColor="@android:color/transparent" />
+                        app:strokeColor="@android:color/transparent" >
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/calories_img"/>
+                    </com.google.android.material.card.MaterialCardView>
 
                 </LinearLayout>
             </LinearLayout>
