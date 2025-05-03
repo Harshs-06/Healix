@@ -57,6 +57,12 @@ public class questions_answers_by_expert extends AppCompatActivity {
                 return true;
 
             }
+            else if (id == R.id.nav_diet) {
+                Intent intent = new Intent(this, diet_planning_page.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                return true;
+            }
             return false;
         });
 

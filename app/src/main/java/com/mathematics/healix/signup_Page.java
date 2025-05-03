@@ -14,9 +14,9 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class signup_Page extends AppCompatActivity {
 
-    private Button button2;
+    private Button signup_btn;
     private TextView textView2;
-    private TextView textView4;
+    private TextView login_toggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,21 +24,18 @@ public class signup_Page extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_signup_page);
 
-        button2 = findViewById(R.id.button2);
-        textView2= findViewById(R.id.textView2);
-        textView4= findViewById(R.id.textView4);
+        signup_btn = findViewById(R.id.signup_btn);
 
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(signup_Page.this, home_page.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
+        login_toggle= findViewById(R.id.login_toggle);
 
-            }
+        signup_btn.setOnClickListener(view -> {
+            Intent intent = new Intent(signup_Page.this, home_page.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+
         });
 
-        textView4.setOnClickListener(v ->  {
+        login_toggle.setOnClickListener(v ->  {
             Intent intent = new Intent(signup_Page.this, login_Page.class);
             startActivity(intent);
             finish();
@@ -47,10 +44,6 @@ public class signup_Page extends AppCompatActivity {
 
 
 
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-//            return insets;
-//        });
+
     }
 }
