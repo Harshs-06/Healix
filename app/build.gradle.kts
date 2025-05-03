@@ -47,5 +47,6 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
     implementation("com.google.android.material:material:1.9.0")
     implementation("com.mikhaellopez:circularprogressbar:3.1.0")
+    implementation("com.airbnb.android:lottie:6.1.0")
 
 }
