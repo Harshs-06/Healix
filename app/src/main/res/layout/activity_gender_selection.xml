@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/gradient_background"
+    android:padding="24dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to Healix."
+        android:textSize="20sp"
+        android:fontFamily="@font/poppins_bold"
+       android:layout_marginTop="-80dp"
+        android:textColor="#444" />
+
+    <TextView
+        android:id="@+id/questionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="How do you identify?"
+
+        android:textSize="24sp"
+
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="#000"
+        android:layout_marginTop="-5dp"
+        />
+
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:id="@+id/female_gender"
+        android:layout_width="330dp"
+        android:layout_height="120dp"
+        android:orientation="horizontal"
+        android:paddingStart="10dp"
+        android:gravity="center_vertical"
+        android:background="@drawable/gender_selector"
+
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="115dp"
+
+            android:src="@drawable/female_img"
+            android:contentDescription="Female" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#262626"
+            android:text="Female"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_semibold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/male_gender"
+        android:layout_width="330dp"
+        android:layout_height="120dp"
+        android:orientation="horizontal"
+        android:paddingStart="10dp"
+        android:gravity="center_vertical"
+        android:background="@drawable/gender_selector"
+
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="116dp"
+
+            android:contentDescription="Female"
+            android:src="@drawable/male_img" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#262626"
+            android:text="Male"
+            android:textSize="20sp"
+           android:layout_gravity="center"
+            android:fontFamily="@font/poppins_semibold" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/other_gender"
+        android:layout_width="330dp"
+        android:layout_height="70dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/gender_selector"
+        android:layout_marginBottom="32dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Other"
+            android:textColor="#262626"
+           android:layout_gravity="center"
+            android:textSize="20sp"
+            android:fontFamily="@font/poppins_semibold" />
+    </LinearLayout>
+
+
+
+</LinearLayout>
