@@ -48,15 +48,16 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="8dp" />
 
-    <!-- Continue Button -->
-<!--    <Button-->
-<!--        android:id="@+id/continueButton"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="56dp"-->
-<!--        android:text="Continue"-->
-<!--        android:textSize="16sp"-->
-<!--        android:enabled="false"-->
-<!--        android:background="@drawable/button_background"-->
-<!--        android:textColor="#FFFFFF"-->
-<!--        android:layout_alignParentBottom="true" />-->
+
+    <Button
+        android:id="@+id/continueButton"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="1dp"
+        android:background="#0F88BF"
+        android:enabled="true"
+        android:text="Next"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
 </RelativeLayout>

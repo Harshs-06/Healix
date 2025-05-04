@@ -19,8 +19,8 @@ public class Person_height extends AppCompatActivity {
         setContentView(R.layout.activity_person_height);
 
         heightPicker = findViewById(R.id.heightPicker);
-        continueButton = findViewById(R.id.continueButton);
-        ImageButton backButton = findViewById(R.id.backButton);
+//        continueButton = findViewById(R.id.continueButton);
+//        ImageButton backButton = findViewById(R.id.backButton);
 
         // Setup height picker (range: 50 to 250 cm)
         heightPicker.setMinValue(50);
@@ -36,6 +36,6 @@ public class Person_height extends AppCompatActivity {
             // Example: startActivity(new Intent(this, NextActivity.class));
         });
 
-        backButton.setOnClickListener(v -> onBackPressed());
+//        backButton.setOnClickListener(v -> onBackPressed());
     }
 }

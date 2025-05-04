@@ -73,7 +73,7 @@
         android:id="@+id/continueButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Continue"
+        android:text="Next"
         android:background="#000000"
         android:textColor="#FFFFFF"
         android:textStyle="bold"

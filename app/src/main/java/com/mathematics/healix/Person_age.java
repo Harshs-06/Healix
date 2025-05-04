@@ -20,8 +20,8 @@ public class Person_age extends AppCompatActivity {
         setContentView(R.layout.activity_person_age);
 
         ageInput = findViewById(R.id.ageInput);
-        continueButton = findViewById(R.id.continueButton);
-        backButton = findViewById(R.id.backButton);
+//        continueButton = findViewById(R.id.continueButton);
+//        backButton = findViewById(R.id.backButton);
 
         // Listener for enabling the button
         ageInput.addTextChangedListener(new TextWatcher() {
