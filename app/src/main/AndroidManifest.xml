@@ -17,15 +17,20 @@
         android:theme="@style/Theme.Healix"
         tools:targetApi="31">
         <activity
+            android:name=".Person_height"
+            android:exported="false" />
+        <activity
+            android:name=".Person_age"
+            android:exported="false" />
+        <activity
+            android:name=".Enter_weight"
+            android:exported="false" />
+        <activity
             android:name=".ask_free_question_activity"
-            android:exported="true" >
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".questions_answers_by_expert"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".diet_planning_page"
             android:exported="false" />
@@ -43,10 +48,10 @@
             android:exported="false" />
         <activity
             android:name=".CommunityForum"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".healthCheckups"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".GetStarted"
             android:exported="false" />
@@ -67,12 +72,10 @@
             android:exported="false" />
         <activity
             android:name=".home_page"
-            android:exported="false">
-
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
