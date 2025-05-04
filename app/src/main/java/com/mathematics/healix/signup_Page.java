@@ -29,7 +29,7 @@ public class signup_Page extends AppCompatActivity {
         login_toggle= findViewById(R.id.login_toggle);
 
         signup_btn.setOnClickListener(view -> {
-            Intent intent = new Intent(signup_Page.this, home_page.class);
+            Intent intent = new Intent(signup_Page.this, genderSelection.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
 
