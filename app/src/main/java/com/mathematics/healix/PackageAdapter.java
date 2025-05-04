@@ -1,6 +1,7 @@
 package com.mathematics.healix;
 
 import android.content.Context;
+import android.content.Intent;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.StrikethroughSpan;
@@ -13,6 +14,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.button.MaterialButton;
 
 import java.util.List;
 
@@ -45,6 +48,15 @@ public class PackageAdapter extends RecyclerView.Adapter<PackageAdapter.PackageV
         holder.totalPrice.setText(item.getTotalPrice());
         holder.discount.setText(item.getDiscount());
 
+        holder.bookbutton.setOnClickListener(v -> {
+            Intent intent = new Intent(context , book_tests.class);
+            intent.putExtra("title",item.getTitle());
+            intent.putExtra("desc",item.getDesc());
+            intent.putExtra("price",item.getActualPrice());
+
+            context.startActivity(intent);
+
+        });
 
         holder.favBtn.setOnClickListener(v -> {
             boolean isSelected = holder.favBtn.isSelected();
@@ -67,7 +79,8 @@ public class PackageAdapter extends RecyclerView.Adapter<PackageAdapter.PackageV
     class PackageViewHolder extends RecyclerView.ViewHolder {
 
         TextView title, desc, noOfTests, tat, actualPrice, totalPrice, discount;
-        ImageButton favBtn;  // ImageButton for the favorite button
+        ImageButton favBtn;
+        MaterialButton bookbutton;
 
         public PackageViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -78,7 +91,9 @@ public class PackageAdapter extends RecyclerView.Adapter<PackageAdapter.PackageV
             actualPrice = itemView.findViewById(R.id.actualprice);
             totalPrice = itemView.findViewById(R.id.totalprice);
             discount = itemView.findViewById(R.id.discount);
-            favBtn = itemView.findViewById(R.id.favourite);  // Reference to the favorite button
+            favBtn = itemView.findViewById(R.id.favourite);
+            bookbutton = itemView.findViewById(R.id.bookbutton);
+
         }
     }
 }
