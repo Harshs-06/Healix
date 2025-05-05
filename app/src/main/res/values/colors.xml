@@ -18,7 +18,7 @@
     <color name="protein_color">#4285F4</color>
     <color name="green_button">#4CAF50</color>
     <color name="tab_selected">#ff9f00</color>
-    <color name="tab_unselected">#DDDDDD</color>
+    <color name="tab_unselected">#FBF2DC</color>
     <color name="pastel_green">#C8E6C9</color>
     <color name="bottom_nav_background">#FFFFFF</color>
     <color name="bottom_nav_selected">#4CAF50</color>

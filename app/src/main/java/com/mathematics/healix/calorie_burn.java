@@ -29,21 +29,18 @@ import java.util.Set;
 
 public class calorie_burn extends AppCompatActivity {
     BottomNavigationView bottomNav;
-    private HealthConnectClient healthConnectClient;
 
-    // Declare permissionLauncher as a class-level variable
-    private ActivityResultLauncher<String[]> permissionLauncher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calorie_burn);
 
-        // Set status bar color
+
         Window window = getWindow();
         window.setStatusBarColor(getResources().getColor(R.color.blue));
 
-        // Setup bottom navigation
+
         bottomNav = findViewById(R.id.bottomNavigationView);
         bottomNav.setSelectedItemId(R.id.nav_home);
         bottomNav.setOnItemSelectedListener(item -> {
@@ -63,7 +60,7 @@ public class calorie_burn extends AppCompatActivity {
             return false;
         });
 
-        // Back button
+
         ImageButton backButton4 = findViewById(R.id.backButton4);
         backButton4.setOnClickListener(v -> {
             Intent intent = new Intent(this, home_page.class);
@@ -71,25 +68,10 @@ public class calorie_burn extends AppCompatActivity {
             startActivity(intent);
         });
 
-        // Initialize Health Connect client
-        healthConnectClient = HealthConnectClient.getOrCreate(this);
 
-        // Initialize permissionLauncher
-        permissionLauncher = registerForActivityResult(
-                new ActivityResultContracts.RequestMultiplePermissions(),
-                result -> {
-                    Boolean granted = result.get("androidx.health.permission.READ_TOTAL_CALORIES_BURNED");
-                    if (granted != null && granted) {
-                        fetchCaloriesData();
-                    } else {
-                        Toast.makeText(this, "Permission denied, cannot fetch calories data.", Toast.LENGTH_SHORT).show();
-                    }
-                });
 
-        // Request permissions
-        requestCaloriesPermission();
 
-        // Apply system inset padding
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -103,45 +85,7 @@ public class calorie_burn extends AppCompatActivity {
         bottomNav.setSelectedItemId(R.id.nav_home);
     }
 
-    private void requestCaloriesPermission() {
-        // Request permission for reading total calories burned
-        permissionLauncher.launch(new String[]{"androidx.health.permission.READ_TOTAL_CALORIES_BURNED"});
-    }
 
-    private void fetchCaloriesData() {
-        if (healthConnectClient == null) {
-            healthConnectClient = HealthConnectClient.getOrCreate(this);
-        }
-
-        Instant now = Instant.now();
-        Instant startTime = now.minus(1, ChronoUnit.DAYS);
-        Instant endTime = now;
-
-        TimeRangeFilter timeRangeFilter = TimeRangeFilter.between(startTime, endTime);
-
-        // Create the request with the appropriate filter
-//        ReadRecordsRequest<TotalCaloriesBurnedRecord> request = new ReadRecordsRequest.Builder<>(TotalCaloriesBurnedRecord.class)
-//                .setTimeRangeFilter(timeRangeFilter)
-//                .build();  // Build the request
-//
-//        // Use healthConnectClient.readRecords with the correct method signature
-//        Objects.requireNonNull(healthConnectClient.readRecords(request))
-//                .addOnSuccessListener(response -> {
-//                    List<TotalCaloriesBurnedRecord> calorieRecords = response.getRecords();
-//                    double totalCalories = 0;
-//                    for (TotalCaloriesBurnedRecord record : calorieRecords) {
-//                        totalCalories += record.getEnergy().getKilocalories();
-//                    }
-//
-//                    // Display the total calories burned
-//                    TextView caloriesTextView = findViewById(R.id.calories_text);
-//                    caloriesTextView.setText(String.format("Total Calories Burned: %s", totalCalories));
-//                })
-//                .addOnFailureListener(e -> {
-//                    Toast.makeText(this, "Failed to fetch calories data.", Toast.LENGTH_SHORT).show();
-//                    e.printStackTrace();
-//                });
-    }
 
 
 }

@@ -93,17 +93,31 @@
             android:textColor="#616060"
             android:textColorHint="#616060" />
 
-        <android.widget.Button
-            android:id="@+id/signup_btn"
+        <FrameLayout
+            android:id="@+id/login_frame"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/signup_button"
+            android:layout_marginTop="30dp">
+            <android.widget.Button
+                android:id="@+id/signup_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
 
-            android:fontFamily="@font/poppins_semibold"
-            android:text="Signup"
-            android:textColor="#ffffff"
-            android:textSize="25sp" />
+                android:background="@drawable/signup_button"
+
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Sign Up"
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+            <ProgressBar
+                android:id="@+id/login_progress"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:indeterminateTint="@color/white"
+                style="?android:attr/progressBarStyleSmall" />
+        </FrameLayout>
     </LinearLayout>
 
     <LinearLayout

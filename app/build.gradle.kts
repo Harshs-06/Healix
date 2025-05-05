@@ -51,5 +51,6 @@ dependencies {
     implementation ("com.github.blackfizz:eazegraph:1.2.5l@aar")
     implementation ("com.nineoldandroids:library:2.4.0")
     implementation("androidx.health.connect:connect-client:1.1.0-alpha06")
+    implementation("com.google.guava:guava:31.1-android")
 
 }

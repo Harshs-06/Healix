@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/diet_bg"
     tools:context=".week_diet_plan">
     <ScrollView
         android:layout_width="match_parent"
@@ -73,7 +74,7 @@
                     android:orientation="horizontal">
 
                     <ImageButton
-                        android:id="@+id/backButton1"
+                        android:id="@+id/backButton4"
                         android:layout_width="wrap_content"
                         android:layout_gravity="center"
                         android:layout_height="wrap_content"
@@ -98,41 +99,54 @@
 
             </LinearLayout>
 
+
+
+
             <LinearLayout
-                android:layout_width="330dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_gravity="start"
+
+                android:layout_marginStart="25dp"
                 android:orientation="vertical"
-                android:layout_marginTop="16dp">
+                android:layout_marginTop="3dp">
 
                 <TextView
                     android:layout_width="wrap_content"
+                    android:id="@+id/food_title"
                     android:layout_height="wrap_content"
                     android:text="Low calorie"
+                    android:layout_gravity="start"
 
                     android:textColor="@color/text_primary"
-                    android:textSize="24sp"
+                    android:textSize="25sp"
                     android:fontFamily="@font/poppins_bold" />
 
                 <TextView
+                    android:id="@+id/food_subtitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:fontFamily="@font/poppins_medium"
+
+
+                    android:textSize="16dp"
+                    android:fontFamily="@font/poppins_semibold"
                     android:text="Low calorie brings you a lot of benefits that make..."
                     android:textColor="@color/text_primary" />
 
 
             </LinearLayout>
 
+
             <!-- Diet Plan Card View -->
             <androidx.cardview.widget.CardView
                 android:layout_width="330dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+               android:layout_marginTop="20dp"
                 android:layout_gravity="center"
-                app:cardBackgroundColor="#FFF7EE"
+                app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="16dp"
+
                 app:cardElevation="4dp">
 
 
@@ -256,6 +270,7 @@
                         <FrameLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="-60dp"
                             android:layout_weight="1">
 
                             <ProgressBar
@@ -302,12 +317,14 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:orientation="vertical"
+                            android:layout_marginStart="-70dp"
                             android:layout_gravity="center_vertical">
 
                             <!-- Carbs -->
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+
                                 android:layout_marginBottom="8dp"
                                 android:orientation="horizontal"
                                 android:gravity="center_vertical">
@@ -674,21 +691,23 @@
                     </LinearLayout>
 
                     <!-- Start Plan Button -->
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnStartPlan"
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:layout_marginTop="24dp"
-                        app:backgroundTint="#FFB400"
-                        android:fontFamily="@font/poppins_semibold"
-                        android:text="START PLAN"
-                        android:textColor="@color/white"
-                        android:textSize="18sp"
-                        android:paddingStart="20dp"
-                        android:paddingEnd="20dp"
-                        android:drawablePadding="10dp" />
+<!--                    <com.google.android.material.button.MaterialButton-->
+<!--                        android:id="@+id/btnStartPlan"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="60dp"-->
+<!--                        android:layout_marginTop="24dp"-->
+<!--                        app:backgroundTint="#FFB400"-->
+<!--                        android:fontFamily="@font/poppins_semibold"-->
+<!--                        android:text="START PLAN"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:textSize="18sp"-->
+<!--                        android:paddingStart="20dp"-->
+<!--                        android:paddingEnd="20dp"-->
+<!--                        android:drawablePadding="10dp" />-->
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
+
 
 
             <Space
