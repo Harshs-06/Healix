@@ -55,6 +55,12 @@ public class ask_free_question_activity extends AppCompatActivity {
                 startActivity(intent);
                 return true;
             }
+            else if (id == R.id.nav_diet) {
+                Intent intent = new Intent(this, diet_planning_page.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                return true;
+            }
 
             return false;
         });
@@ -144,11 +150,12 @@ public class ask_free_question_activity extends AppCompatActivity {
                 new Handler().postDelayed(() -> {
                     progressBar.setVisibility(View.GONE);
                     askquestion.setText("Ask");
-                }, 5000);
-                Toast.makeText(this, "Your question posted successfully", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(this, home_page.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                startActivity(intent);
+                    Toast.makeText(this, "Your question posted successfully", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(this, home_page.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                    startActivity(intent);
+                }, 3000);
+
             }
         });
         ImageButton backButton7 = findViewById(R.id.backButton7);
