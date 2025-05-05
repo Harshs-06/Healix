@@ -17,18 +17,18 @@ public class Person_height extends AppCompatActivity {
         setContentView(R.layout.activity_person_height);
 
         heightPicker = findViewById(R.id.heightPicker);
-        nextButton = findViewById(R.id.nextButton);
+        nextButton = findViewById(R.id.height_to_nextbutton);
 
 
         heightPicker.setMinValue(50);
         heightPicker.setMaxValue(250);
-        heightPicker.setValue(170);
+        heightPicker.setValue(160);
 
 
-        nextButton.setEnabled(true);
+
 
         nextButton.setOnClickListener(v -> {
-            int selectedHeight = heightPicker.getValue();  // Height in cm
+            int selectedHeight = heightPicker.getValue();
 
             // Pass height to weight activity
             Intent intent = new Intent(Person_height.this, Enter_weight.class);

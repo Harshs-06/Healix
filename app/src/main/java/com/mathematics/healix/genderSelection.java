@@ -24,6 +24,9 @@ public class genderSelection extends AppCompatActivity {
         male_gender = findViewById(R.id.male_gender);
         other_gender = findViewById(R.id.other_gender);
         gender_to_nextbutton = findViewById(R.id.gender_to_nextbutton);
+
+
+        gender_to_nextbutton.setOnClickListener(v -> startActivity(new Intent(genderSelection.this,Person_age.class)));
         female_gender.setOnClickListener(v -> {
             if (female_gender.isSelected()) {
                 female_gender.setSelected(false);

@@ -17,11 +17,14 @@
         android:theme="@style/Theme.Healix"
         tools:targetApi="31">
         <activity
+            android:name=".setting_up_data_page"
+            android:exported="false" />
+        <activity
             android:name=".scheduled_tests"
             android:exported="false" />
         <activity
             android:name=".book_tests"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ask_free_question_activity"
             android:exported="true" />
@@ -45,6 +48,15 @@
             android:exported="false" />
         <activity
             android:name=".CommunityForum"
+            android:exported="false" />
+        <activity
+            android:name=".Person_age"
+            android:exported="false" />
+        <activity
+            android:name=".Person_height"
+            android:exported="false" />
+        <activity
+            android:name=".Enter_weight"
             android:exported="false" />
         <activity
             android:name=".week_diet_plan"

@@ -43,7 +43,6 @@ public class StepTrackerActivity extends AppCompatActivity {
     private long[] stepsData = new long[7];
     private long lastStepCount = -1;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

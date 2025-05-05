@@ -5,20 +5,24 @@
     android:id="@+id/root_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp"
     android:background="@drawable/gradient_background"
     android:orientation="vertical"
     tools:context=".Enter_weight">
-
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/questionText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="What’s your weight?"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp" />
+        android:text="What's your weight?"
+
+        android:textSize="35sp"
+        android:layout_gravity="center"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="#000"
+        android:layout_marginTop="-5dp"
+        />
 
     <EditText
         android:id="@+id/weightInput"
@@ -33,51 +37,29 @@
         android:textSize="48sp"
         android:textColor="#000000"
         android:layout_gravity="center_horizontal" />
-    <com.google.android.material.button.MaterialButtonToggleGroup
-        android:id="@+id/unitToggleGroup"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center_horizontal"
-        app:shapeAppearanceOverlay="@style/RoundedCorners"
-        app:checkedButton="@id/kgButton"
-        app:singleSelection="true"
-        app:materialButtonToggleGroupStyle="@style/CustomToggleButton">
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/kgButton"
-            style="@style/CustomToggleButton"
-            android:text="kg" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/lbsButton"
-            style="@style/CustomToggleButton"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="lbs" />
-    </com.google.android.material.button.MaterialButtonToggleGroup>
-
 
     <TextView
-        android:id="@+id/bmiResult"
+        android:id="@+id/unitLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center_horizontal"
-        android:text="Your BMI is being calculated..."
-        android:textColor="#000000"
-        android:textSize="14sp" />
+        android:layout_gravity="center"
+        android:text="kg"
+        android:textColor="@color/black"
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:textSize="30sp"
+        android:fontFamily="@font/poppins_bold"
+        android:layout_marginTop="30dp" />
+
+
+
+
+
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/weight_to_nextbutton"
         android:layout_width="315dp"
         android:layout_height="57dp"
-        android:layout_marginTop="50dp"
+         android:layout_marginTop="350dp"
         app:cardBackgroundColor="@color/blue"
         android:text="Next"
         android:layout_gravity="center"
