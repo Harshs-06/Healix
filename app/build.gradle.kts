@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId = "com.mathematics.healix"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -48,5 +48,8 @@ dependencies {
     implementation("com.google.android.material:material:1.9.0")
     implementation("com.mikhaellopez:circularprogressbar:3.1.0")
     implementation("com.airbnb.android:lottie:6.1.0")
+    implementation ("com.github.blackfizz:eazegraph:1.2.5l@aar")
+    implementation ("com.nineoldandroids:library:2.4.0")
+    implementation("androidx.health.connect:connect-client:1.1.0-alpha06")
 
 }

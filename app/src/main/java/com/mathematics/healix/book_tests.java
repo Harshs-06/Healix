@@ -36,7 +36,6 @@ public class book_tests extends AppCompatActivity {
     LinearLayout priceLayout;
     TextView totalPricePayable;
     int basePrice;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

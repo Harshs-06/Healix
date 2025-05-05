@@ -4,10 +4,4 @@
     <color name="white">#FFFFFFFF</color>
     <color name="orange">#ff9500</color>
     <color name="blue">#0F77F0</color>
-
-    <!-- 🎨 ADD THESE -->
-    <color name="toggle_background">#F5F5F5</color>
-    <color name="toggle_border">#DDDDDD</color>
-
-
 </resources>

@@ -57,6 +57,7 @@ public class PackageAdapter extends RecyclerView.Adapter<PackageAdapter.PackageV
             context.startActivity(intent);
 
         });
+        
 
         holder.favBtn.setOnClickListener(v -> {
             boolean isSelected = holder.favBtn.isSelected();
