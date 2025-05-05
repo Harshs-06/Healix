@@ -4,24 +4,4 @@
     <color name="white">#FFFFFFFF</color>
     <color name="orange">#ff9500</color>
     <color name="blue">#0F77F0</color>
-    <color name="blue_header">#3F51B5</color>
-    <color name="light_green">#E8F5E9</color>
-    <color name="text_primary">#0A2342</color>
-    <color name="text_secondary">#666666</color>
-    <color name="indicator_active">#0f77f0</color>
-    <color name="indicator_inactive">#CCCCCC</color>
-    <color name="card_background">#F5F5F5</color>
-    <color name="calorie_ring_start">#4285F4</color>
-    <color name="calorie_ring_end">#FFA500</color>
-    <color name="carbs_color">#FF5722</color>
-    <color name="fat_color">#FFC107</color>
-    <color name="protein_color">#4285F4</color>
-    <color name="green_button">#4CAF50</color>
-    <color name="tab_selected">#ff9f00</color>
-    <color name="tab_unselected">#FBF2DC</color>
-    <color name="pastel_green">#C8E6C9</color>
-    <color name="bottom_nav_background">#FFFFFF</color>
-    <color name="bottom_nav_selected">#4CAF50</color>
-    <color name="bottom_nav_unselected">#AAAAAA</color>
-    <color name="transparent">#00000000</color>
 </resources>
