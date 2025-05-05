@@ -10,11 +10,10 @@ public class Enter_weight extends AppCompatActivity {
     EditText weightInput;
     RadioButton kgButton, lbsButton;
     TextView bmiResult;
-    Button continueButton;
+    Button nextButton;
 
     double heightInInches;
 
-    // Sample height in inches (for example: 5'6" = 66 inches)
     final double HEIGHT_INCHES = 66;
 
     @Override
@@ -26,12 +25,12 @@ public class Enter_weight extends AppCompatActivity {
         kgButton = findViewById(R.id.kgButton);
         lbsButton = findViewById(R.id.lbsButton);
         bmiResult = findViewById(R.id.bmiResult);
-        continueButton = findViewById(R.id.continueButton);
+        nextButton = findViewById(R.id.continueButton);
 
         double heightInCm = getIntent().getDoubleExtra("height_cm", 0);
-        heightInInches = heightInCm * 0.393701;  // Convert to inches
+        heightInInches = heightInCm * 0.393701;
 
-        continueButton.setOnClickListener(new View.OnClickListener() {
+        nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 calculateBMI();

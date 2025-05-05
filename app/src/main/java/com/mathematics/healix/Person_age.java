@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class Person_age extends AppCompatActivity {
 
     private EditText ageInput;
-    private Button continueButton;
+    private Button nextButton;
     private ImageView backButton;
 
     @Override
@@ -32,11 +32,11 @@ public class Person_age extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 String input = ageInput.getText().toString();
                 if (!input.isEmpty() && Integer.parseInt(input) > 0) {
-                    continueButton.setEnabled(true);
-                    continueButton.setBackgroundColor(getResources().getColor(android.R.color.holo_blue_light));
+                    nextButton.setEnabled(true);
+                    nextButton.setBackgroundColor(getResources().getColor(android.R.color.holo_blue_light));
                 } else {
-                    continueButton.setEnabled(false);
-                    continueButton.setBackgroundColor(getResources().getColor(android.R.color.darker_gray));
+                    nextButton.setEnabled(false);
+                    nextButton.setBackgroundColor(getResources().getColor(android.R.color.darker_gray));
                 }
             }
 
@@ -45,7 +45,7 @@ public class Person_age extends AppCompatActivity {
         });
 
         // Continue button click
-        continueButton.setOnClickListener(view -> {
+        nextButton.setOnClickListener(view -> {
             String age = ageInput.getText().toString();
             Toast.makeText(Person_age.this, "Age entered: " + age, Toast.LENGTH_SHORT).show();
             // Intent to next screen can go here
