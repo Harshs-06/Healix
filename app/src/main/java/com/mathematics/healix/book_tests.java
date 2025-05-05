@@ -21,6 +21,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -28,14 +30,18 @@ import java.util.List;
 import java.util.Locale;
 
 public class book_tests extends AppCompatActivity {
+    // Firebase reference
+    DatabaseReference mDatabase;
+
+    // UI elements
     BottomNavigationView bottomNav;
-    LinearLayout cat_individual,cat_couple,cat_family,if_family_choosen;
-    TextView datepicker,timepicker;
+    LinearLayout cat_individual, cat_couple, cat_family, if_family_choosen;
+    TextView datepicker, timepicker, totalPricePayable;
     Calendar selectedCalendar = Calendar.getInstance();
     Spinner familyMemberSpinner;
     LinearLayout priceLayout;
-    TextView totalPricePayable;
     int basePrice;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,13 +50,14 @@ public class book_tests extends AppCompatActivity {
         Window window = getWindow();
         window.setStatusBarColor(getResources().getColor(R.color.blue));
 
+        // Initialize Firebase Database
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
-
+        // UI Initialization
         ImageButton backButton7 = findViewById(R.id.backButton7);
         backButton7.setOnClickListener(v -> finish());
 
-
-        bottomNav =findViewById(R.id.bottomNavigationView);
+        bottomNav = findViewById(R.id.bottomNavigationView);
         bottomNav.setSelectedItemId(R.id.nav_lab);
         bottomNav.setOnItemSelectedListener(item -> {
             int id = item.getItemId();
@@ -58,19 +65,15 @@ public class book_tests extends AppCompatActivity {
                 Intent intent = new Intent(this, home_page.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
-
                 return true;
-            }else if (id == R.id.nav_lab) {
-
+            } else if (id == R.id.nav_lab) {
                 return true;
-            }else if (id==R.id.nav_community) {
-                Intent intent = new Intent(this,CommunityForum.class);
+            } else if (id == R.id.nav_community) {
+                Intent intent = new Intent(this, CommunityForum.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
                 return true;
-
-            }
-            else if (id == R.id.nav_diet) {
+            } else if (id == R.id.nav_diet) {
                 Intent intent = new Intent(this, diet_planning_page.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
@@ -79,20 +82,17 @@ public class book_tests extends AppCompatActivity {
             return false;
         });
 
-        TextView type,pre_prepare,userprice;
+        // Setup UI elements
+        TextView type, pre_prepare, userprice;
         type = findViewById(R.id.type);
         pre_prepare = findViewById(R.id.pre_prepare);
         userprice = findViewById(R.id.userprice);
-
         type.setText(getIntent().getStringExtra("title"));
         pre_prepare.setText(getIntent().getStringExtra("desc"));
         userprice.setText(getIntent().getStringExtra("price"));
-
         String priceString = getIntent().getStringExtra("price");
         priceString = priceString.replace("₹", "").trim();
         basePrice = Integer.parseInt(priceString);
-
-
 
         cat_individual = findViewById(R.id.cat_individual);
         cat_couple = findViewById(R.id.cat_couple);
@@ -104,49 +104,41 @@ public class book_tests extends AppCompatActivity {
         datepicker = findViewById(R.id.datepicker);
         timepicker = findViewById(R.id.timepicker);
 
+        // Date and Time Picker Setup
         datepicker.setOnClickListener(v -> showDatePicker());
         timepicker.setOnClickListener(v -> showTimePicker());
 
-
+        // Category Selection
         cat_individual.setOnClickListener(v -> {
             updateCategorySelection(cat_individual);
             if_family_choosen.setVisibility(View.GONE);
             updatePrice(1);
         });
-
         cat_couple.setOnClickListener(v -> {
             updateCategorySelection(cat_couple);
             if_family_choosen.setVisibility(View.GONE);
             updatePrice(2);
         });
-
         cat_family.setOnClickListener(v -> {
             updateCategorySelection(cat_family);
             if_family_choosen.setVisibility(View.VISIBLE);
-
             int memberCount = Integer.parseInt(familyMemberSpinner.getSelectedItem().toString());
             updatePrice(memberCount);
         });
 
-
-
+        // Spinner for family members
         List<Integer> members = new ArrayList<>();
         for (int i = 3; i <= 9; i++) {
             members.add(i);
         }
         ArrayAdapter<Integer> membersadapter = new ArrayAdapter<>(
-                this,
-                R.layout.member_spinner_layout,
-                members
-        );
+                this, R.layout.member_spinner_layout, members);
         membersadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
         familyMemberSpinner.setAdapter(membersadapter);
 
         familyMemberSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                // Only update price if family is currently selected
                 if (cat_family.isSelected()) {
                     int memberCount = Integer.parseInt(parent.getItemAtPosition(position).toString());
                     updatePrice(memberCount);
@@ -157,35 +149,33 @@ public class book_tests extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {}
         });
 
-
+        // Adjust padding for Edge-to-Edge
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
     }
+
     private void updateCategorySelection(LinearLayout selectedLayout) {
         cat_individual.setSelected(false);
         cat_couple.setSelected(false);
         cat_family.setSelected(false);
-
         selectedLayout.setSelected(true);
     }
+
     @Override
     protected void onResume() {
         super.onResume();
-
         bottomNav.setSelectedItemId(R.id.nav_lab);
     }
 
     private void showDatePicker() {
         Calendar today = Calendar.getInstance();
-
         DatePickerDialog datePickerDialog = new DatePickerDialog(this, (view, year, month, dayOfMonth) -> {
             selectedCalendar.set(Calendar.YEAR, year);
             selectedCalendar.set(Calendar.MONTH, month);
             selectedCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-
             String date = dayOfMonth + "/" + (month + 1) + "/" + year;
             datepicker.setText(date);
             timepicker.setText("Select Time"); // Reset time
@@ -198,21 +188,16 @@ public class book_tests extends AppCompatActivity {
 
     private void showTimePicker() {
         Calendar now = Calendar.getInstance();
-
         int hour = now.get(Calendar.HOUR_OF_DAY);
         int minute = now.get(Calendar.MINUTE);
-
         TimePickerDialog timePickerDialog = new TimePickerDialog(this, (view, selectedHour, selectedMinute) -> {
             Calendar selectedTime = (Calendar) selectedCalendar.clone();
             selectedTime.set(Calendar.HOUR_OF_DAY, selectedHour);
             selectedTime.set(Calendar.MINUTE, selectedMinute);
-
             Calendar current = Calendar.getInstance();
-
             boolean isSameDay =
                     selectedCalendar.get(Calendar.YEAR) == current.get(Calendar.YEAR) &&
                             selectedCalendar.get(Calendar.DAY_OF_YEAR) == current.get(Calendar.DAY_OF_YEAR);
-
             if (isSameDay && selectedTime.before(current)) {
                 Toast.makeText(this, "Please select a future time", Toast.LENGTH_SHORT).show();
             } else {
@@ -220,12 +205,70 @@ public class book_tests extends AppCompatActivity {
                 timepicker.setText(time);
             }
         }, hour, minute, true);
-
         timePickerDialog.show();
     }
+
     private void updatePrice(int multiplier) {
         int total = basePrice * multiplier;
         totalPricePayable.setText("₹" + total);
         priceLayout.setVisibility(View.VISIBLE);
+    }
+
+    private void storeDataInFirebase(String category, String date, String time, int totalPrice) {
+        // Create a unique ID for each booking
+        String bookingId = mDatabase.push().getKey();
+
+        // Create a booking object
+        Booking booking = new Booking(category, date, time, totalPrice);
+
+        // Store the booking data under "bookings" in Firebase
+        if (bookingId != null) {
+            mDatabase.child("bookings").child(bookingId).setValue(booking)
+                    .addOnSuccessListener(aVoid -> Toast.makeText(book_tests.this, "Booking saved!", Toast.LENGTH_SHORT).show())
+                    .addOnFailureListener(e -> Toast.makeText(book_tests.this, "Failed to save booking: " + e.getMessage(), Toast.LENGTH_SHORT).show());
+        }
+    }
+
+    // Example of how to use the storeDataInFirebase method when the user confirms their booking
+    private void onBookingConfirmed() {
+        // Collect the data from the UI
+        String selectedCategory = getSelectedCategory();  // Get the selected category (Individual, Couple, Family)
+        String selectedDate = datepicker.getText().toString();
+        String selectedTime = timepicker.getText().toString();
+        int totalPrice = Integer.parseInt(totalPricePayable.getText().toString().replace("₹", "").trim());
+
+        // Store the data in Firebase
+        storeDataInFirebase(selectedCategory, selectedDate, selectedTime, totalPrice);
+    }
+
+    // Helper method to get the selected category
+    private String getSelectedCategory() {
+        if (cat_individual.isSelected()) {
+            return "Individual";
+        } else if (cat_couple.isSelected()) {
+            return "Couple";
+        } else if (cat_family.isSelected()) {
+            return "Family";
+        }
+        return "Unknown";
+    }
+
+    // Booking class to store the user's booking data
+    public static class Booking {
+        public String category;
+        public String date;
+        public String time;
+        public int totalPrice;
+
+        public Booking() {
+            // Default constructor required for Firebase
+        }
+
+        public Booking(String category, String date, String time, int totalPrice) {
+            this.category = category;
+            this.date = date;
+            this.time = time;
+            this.totalPrice = totalPrice;
+        }
     }
 }

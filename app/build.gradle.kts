@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -52,5 +53,12 @@ dependencies {
     implementation ("com.nineoldandroids:library:2.4.0")
     implementation("androidx.health.connect:connect-client:1.1.0-alpha06")
     implementation("com.google.guava:guava:31.1-android")
+    implementation(platform("com.google.firebase:firebase-bom:33.13.0"))
+    implementation("com.google.firebase:firebase-analytics")
+    implementation ("com.google.firebase:firebase-auth:22.3.0")
+    implementation ("com.google.firebase:firebase-database:20.3.0")
+    implementation ("com.google.firebase:firebase-auth:22.3.0")
+    implementation ("com.google.firebase:firebase-firestore:24.9.0")
+
 
 }
