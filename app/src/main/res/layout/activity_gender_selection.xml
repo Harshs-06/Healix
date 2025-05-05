@@ -122,7 +122,6 @@
          android:id="@+id/gender_to_nextbutton"
          android:layout_width="315dp"
          android:layout_height="57dp"
-          android:visibility="invisible"
          android:layout_marginTop="50dp"
          app:cardBackgroundColor="@color/blue"
          android:text="Next"
