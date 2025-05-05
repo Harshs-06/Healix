@@ -35,7 +35,7 @@ import java.util.List;
 
 public class home_page extends AppCompatActivity {
     private EditText searchBar;
-    private MaterialCardView stepCountButton;
+    private MaterialCardView stepCountButton,heart_bpm,sleep_cycle,calorie_burn;
     private final String[] hints = {"Search for doctors", "Find lab tests", "Make your diet plan"};
 
     private int hintIndex = 0;
@@ -119,8 +119,8 @@ public class home_page extends AppCompatActivity {
         });
 
 
-        //Step count  button
-        MaterialCardView stepCountButton = findViewById(R.id.stepCountButton);
+
+        stepCountButton = findViewById(R.id.stepCountButton);
 
         stepCountButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -128,6 +128,27 @@ public class home_page extends AppCompatActivity {
                 Intent intent = new Intent(home_page.this, StepTrackerActivity.class);
                 startActivity(intent);
             }
+        });
+
+        heart_bpm = findViewById(R.id.heart_bpm);
+
+        heart_bpm.setOnClickListener(v -> {
+            Intent intent = new Intent(home_page.this, heart_rate.class);
+            startActivity(intent);
+        });
+
+        sleep_cycle = findViewById(R.id.sleep_cycle);
+
+        sleep_cycle.setOnClickListener(v -> {
+            Intent intent = new Intent(home_page.this, sleep_cycle.class);
+            startActivity(intent);
+        });
+
+        calorie_burn = findViewById(R.id.calorie_burn);
+
+        calorie_burn.setOnClickListener(v -> {
+            Intent intent = new Intent(home_page.this, calorie_burn.class);
+            startActivity(intent);
         });
 
 

@@ -102,12 +102,17 @@ public class home_lab_test extends AppCompatActivity {
         List<LabChoice_Model> choiceList = new ArrayList<>();
         choiceList.add(new LabChoice_Model(R.drawable.healthcheckup_img,"Health Checkups"));
         choiceList.add(new LabChoice_Model(R.drawable.labtest_img,"Lab Tests"));
+        choiceList.add(new LabChoice_Model(R.drawable.booked_test_icon,"Scheduled Tests"));
         choiceList.add(new LabChoice_Model(R.drawable.downloadreport_img,"Download Report"));
         choiceList.add(new LabChoice_Model(R.drawable.tracksample_img,"Track Sample"));
 
         LabChoiceModel_Adapter labChoiceModel_adapter = new LabChoiceModel_Adapter(choiceList);
 
         labChoiceModel_adapter.setOnItemClickListener(item -> {
+
+
+
+
             Intent intent;
             switch (item.getTitle()) {
                 case "Health Checkups":

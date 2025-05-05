@@ -5,6 +5,10 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.health.READ_HEART_RATE" />
+    <uses-permission android:name="android.permission.health.READ_TOTAL_CALORIES_BURNED" />
+    <uses-permission android:name="android.permission.health.READ_SLEEP" />
+
 
     <application
         android:allowBackup="true"
@@ -17,19 +21,26 @@
         android:theme="@style/Theme.Healix"
         tools:targetApi="31">
         <activity
+            android:name=".calorie_burn"
+            android:exported="false" />
+        <activity
+            android:name=".sleep_cycle"
+            android:exported="false" />
+        <activity
+            android:name=".heart_rate"
+            android:exported="false" />
+        <activity
             android:name=".book_tests"
-            android:exported="true" >
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".ask_free_question_activity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".questions_answers_by_expert"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".diet_planning_page"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".trackSample"
             android:exported="false" />
@@ -71,7 +82,7 @@
             android:exported="false" />
         <activity
             android:name=".home_page"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
