@@ -12,6 +12,8 @@ public class Enter_weight extends AppCompatActivity {
     TextView bmiResult;
     Button continueButton;
 
+    double heightInInches;
+
     // Sample height in inches (for example: 5'6" = 66 inches)
     final double HEIGHT_INCHES = 66;
 
@@ -25,6 +27,9 @@ public class Enter_weight extends AppCompatActivity {
         lbsButton = findViewById(R.id.lbsButton);
         bmiResult = findViewById(R.id.bmiResult);
         continueButton = findViewById(R.id.continueButton);
+
+        double heightInCm = getIntent().getDoubleExtra("height_cm", 0);
+        heightInInches = heightInCm * 0.393701;  // Convert to inches
 
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,18 +48,21 @@ public class Enter_weight extends AppCompatActivity {
 
         double weight = Double.parseDouble(weightStr);
         double weightInLbs = lbsButton.isChecked() ? weight : weight * 2.20462;
-        double heightInMeters = HEIGHT_INCHES * 0.0254;
-        double bmi = (weightInLbs * 703) / (HEIGHT_INCHES * HEIGHT_INCHES);
+
+        double bmi = (weightInLbs * 703) / (heightInInches * heightInInches);
 
         String status;
         if (bmi < 18.5) {
             status = "underweight";
         } else if (bmi <= 24.9) {
             status = "normal";
-        } else {
+        } else if (bmi <= 29.9) {
             status = "overweight";
+        } else {
+            status = "obese";
         }
 
         bmiResult.setText(String.format("Your BMI of %.1f is considered %s.", bmi, status));
     }
+
 }
