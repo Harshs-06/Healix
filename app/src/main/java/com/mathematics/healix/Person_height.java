@@ -17,7 +17,7 @@ public class Person_height extends AppCompatActivity {
         setContentView(R.layout.activity_person_height);
 
         heightPicker = findViewById(R.id.heightPicker);
-        nextButton = findViewById(R.id.continueButton);
+        nextButton = findViewById(R.id.nextButton);
 
 
         heightPicker.setMinValue(50);

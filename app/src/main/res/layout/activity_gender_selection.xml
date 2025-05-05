@@ -18,7 +18,7 @@
         android:text="Welcome to Healix."
         android:textSize="30sp"
         android:fontFamily="@font/poppins_bold"
-       android:layout_marginTop="-50dp"
+      android:layout_marginTop="50dp"
         android:textColor="#444" />
 
     <TextView
@@ -120,13 +120,13 @@
         android:layout_height="20dp"/>
      <com.google.android.material.button.MaterialButton
          android:id="@+id/gender_to_nextbutton"
-         android:layout_width="100dp"
-         android:layout_height="52dp"
-        android:visibility="invisible"
+         android:layout_width="315dp"
+         android:layout_height="57dp"
+          android:visibility="invisible"
+         android:layout_marginTop="50dp"
          app:cardBackgroundColor="@color/blue"
          android:text="Next"
-         android:layout_gravity="end"
-         android:layout_marginEnd="25dp"
+         android:layout_gravity="center"
          android:fontFamily="@font/poppins_semibold"
          android:textColor="@color/white"
          android:textSize="20sp"

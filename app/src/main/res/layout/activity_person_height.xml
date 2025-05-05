@@ -28,12 +28,13 @@
         android:layout_height="32dp" />
 
     <!-- Height Picker -->
+
+    <!-- Units Label -->
     <NumberPicker
         android:id="@+id/heightPicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <!-- Units Label -->
     <TextView
         android:id="@+id/unitLabel"
         android:layout_width="wrap_content"
