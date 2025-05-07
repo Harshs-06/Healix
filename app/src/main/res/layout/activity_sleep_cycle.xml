@@ -110,6 +110,37 @@
             app:lottie_loop="true"
             app:lottie_rawRes="@raw/sleep_animation" />
 
+        <LinearLayout
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="330dp"
+            android:layout_marginTop="-3dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Deep Sleep helps with memory, muscle repair"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="20dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Set a regular sleep schedule and stick to it."
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="15dp"/><TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Keep your bedroom cool and quiet."
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="15dp"/>
+        </LinearLayout>
+
 
     </LinearLayout>
 

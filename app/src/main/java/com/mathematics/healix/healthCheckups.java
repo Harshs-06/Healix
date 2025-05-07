@@ -73,7 +73,7 @@ public class healthCheckups extends AppCompatActivity {
         healthCheckupItems.add(new HealthCheckupItem("Basic Wellness", "No preparation needed", "81", "8 Hours", "₹1999", "₹2999", "You saved 33%"));
         healthCheckupItems.add(new HealthCheckupItem("Basic Wellness", "No preparation needed", "81", "8 Hours", "₹1999", "₹2999", "You saved 33%"));
 
-        HealthCheckupAdapter healthCheckupAdapter = new HealthCheckupAdapter(this,healthCheckupItems);
+        HealthCheckupAdapter healthCheckupAdapter = new HealthCheckupAdapter(this, healthCheckupItems);
         LinearLayoutManager healthlayoutmanager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
         healthcheckups_recyclerview.setLayoutManager(healthlayoutmanager);
         healthcheckups_recyclerview.setAdapter(healthCheckupAdapter);

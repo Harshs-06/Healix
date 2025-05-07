@@ -96,14 +96,14 @@
             android:text="Login"
             android:textColor="#ffffff"
             android:textSize="25sp" />
-        <ProgressBar
-            android:id="@+id/login_progress"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center"
-            android:visibility="gone"
-            android:indeterminateTint="@color/white"
-            style="?android:attr/progressBarStyleSmall" />
+            <ProgressBar
+                android:id="@+id/login_progress"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:indeterminateTint="@color/white"
+                style="?android:attr/progressBarStyleSmall" />
         </FrameLayout>
     </LinearLayout>
 

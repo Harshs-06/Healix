@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".scheduled_tests">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="679dp"
@@ -80,9 +81,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="55dp"
+                    android:layout_marginStart="60dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Download Report"
+                    android:text="Scheduled Test"
                     android:textColor="#2F2F2F"
 
                     android:textSize="23sp"
@@ -92,21 +93,34 @@
 
 
         </LinearLayout>
-        <LinearLayout
-            android:id="@+id/emptydata1"
-            android:layout_marginTop="130dp"
-            android:layout_gravity="center"
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/scheduledTestsRecyclerView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/cardView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/backButton4" />
+
+        <LinearLayout
+            android:id="@+id/emptydata1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="130dp"
             android:orientation="vertical">
+
             <ImageView
 
                 android:layout_width="300dp"
                 android:layout_height="200dp"
                 android:layout_gravity="center"
-                android:src="@drawable/empty_spaceicon"/>
-
-
+                android:src="@drawable/empty_spaceicon" />
 
 
             <Space
@@ -115,13 +129,13 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:text="No tests scheduled for now"
-                tools:ignore="HardcodedText"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:fontFamily="@font/poppins_medium"
+                android:text="No tests scheduled for now"
                 android:textColor="#505050"
                 android:textSize="20sp"
-                android:layout_gravity="center"
-                android:layout_height="wrap_content"/>
+                tools:ignore="HardcodedText" />
         </LinearLayout>
 
 
@@ -131,11 +145,11 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
         android:layout_width="340dp"
-        android:elevation="10dp"
         android:layout_height="62dp"
         android:layout_gravity="bottom"
         android:layout_marginBottom="20dp"
         android:background="@drawable/rounded_nav_background"
+        android:elevation="10dp"
         app:cardBackgroundColor="#FBFBFB"
         app:cardCornerRadius="100dp"
         app:cardElevation="5dp"

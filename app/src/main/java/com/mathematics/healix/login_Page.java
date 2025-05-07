@@ -1,5 +1,7 @@
 package com.mathematics.healix;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -25,7 +27,7 @@ public class login_Page extends AppCompatActivity {
     private Button login_btn;
     private ProgressBar login_progress;
     private TextView signup_toggle;
-
+    private String btntxt = "Login";
     private FirebaseAuth mAuth;
 
     @Override
@@ -46,21 +48,27 @@ public class login_Page extends AppCompatActivity {
 
         // Login button click
         login_btn.setOnClickListener(view -> {
+            login_progress.setVisibility(View.VISIBLE);
+            login_btn.setText("");
+            login_btn.setEnabled(false);
+
             String email = login_email.getText().toString().trim();
             String password = login_password.getText().toString().trim();
 
             if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
                 Toast.makeText(login_Page.this, "All fields are required", Toast.LENGTH_SHORT).show();
+                login_btn.setText(btntxt);
+                login_btn.setEnabled(true);
                 return;
             }
 
-            // Hide login button and show progress bar
-            login_btn.setVisibility(View.INVISIBLE);
-            login_progress.setVisibility(View.VISIBLE);
+
+
 
             // Firebase Login
             mAuth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(task -> {
+
                         if (task.isSuccessful()) {
                             // Success - Go to home page
                             Intent intent = new Intent(login_Page.this, home_page.class);
@@ -68,9 +76,10 @@ public class login_Page extends AppCompatActivity {
                             startActivity(intent);
                             finish();
                         } else {
-                            // Failure - Show login button again
                             login_progress.setVisibility(View.GONE);
-                            login_btn.setVisibility(View.VISIBLE);
+                            login_btn.setText(btntxt);
+                            login_btn.setEnabled(true);
+
                             Toast.makeText(login_Page.this, "Login failed. Please check credentials.", Toast.LENGTH_SHORT).show();
                         }
                     });

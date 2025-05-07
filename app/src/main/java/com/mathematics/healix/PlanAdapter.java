@@ -37,10 +37,10 @@ public class PlanAdapter extends RecyclerView.Adapter<PlanAdapter.PlanViewHolder
         holder.description.setText(item.getDescription());
 
         holder.itemView.setOnClickListener(v -> {
-//            Intent intent = new Intent(v.getContext(), week_diet_plan.class);
-//            intent.putExtra("title",item.getTitle());
-//            intent.putExtra("subtitle",item.getSubtitle());
-//            v.getContext().startActivity(intent);
+            Intent intent = new Intent(v.getContext(), week_diet_plan.class);
+            intent.putExtra("title",item.getTitle());
+            intent.putExtra("subtitle",item.getSubtitle());
+            v.getContext().startActivity(intent);
         });
     }
 

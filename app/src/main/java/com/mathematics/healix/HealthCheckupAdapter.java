@@ -54,16 +54,26 @@ public class HealthCheckupAdapter extends RecyclerView.Adapter<HealthCheckupAdap
         holder.favourite2.setOnClickListener(v -> {
             boolean isSelected = holder.favourite2.isSelected();
             holder.favourite2.setSelected(!isSelected);
-            if(!isSelected){
-                Toast.makeText(v.getContext(),"Marked as favourite",Toast.LENGTH_SHORT).show();
+            if (!isSelected) {
+                Toast.makeText(v.getContext(), "Marked as favourite", Toast.LENGTH_SHORT).show();
             }
         });
 
         holder.bookbutton.setOnClickListener(v -> {
-            Intent intent = new Intent(context , book_tests.class);
-            intent.putExtra("title",item.getTitle());
-            intent.putExtra("desc",item.getDescription());
-            intent.putExtra("price",item.getActualPrice());
+            Intent intent = new Intent(context, book_tests.class);
+            intent.putExtra("title", item.getTitle());
+            intent.putExtra("desc", item.getDescription());
+            intent.putExtra("price", item.getActualPrice());
+
+            context.startActivity(intent);
+
+        });
+
+        holder.showallbutton.setOnClickListener(v -> {
+            Intent intent = new Intent(context, healthcheckup_seemore.class);
+            intent.putExtra("title", item.getTitle());
+            intent.putExtra("desc", item.getDescription());
+//            intent.putExtra("price",item.getActualPrice());
 
             context.startActivity(intent);
 
@@ -84,7 +94,7 @@ public class HealthCheckupAdapter extends RecyclerView.Adapter<HealthCheckupAdap
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView title, description, testCount, tat, actualPrice, totalPrice, discount;
         ImageButton favourite2;
-        MaterialButton bookbutton;
+        MaterialButton bookbutton, showallbutton;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -97,6 +107,7 @@ public class HealthCheckupAdapter extends RecyclerView.Adapter<HealthCheckupAdap
             discount = itemView.findViewById(R.id.discount2);
             favourite2 = itemView.findViewById(R.id.favourite2);
             bookbutton = itemView.findViewById(R.id.bookbutton);
+            showallbutton = itemView.findViewById(R.id.showallbutton);
 
 
         }

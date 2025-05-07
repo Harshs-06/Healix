@@ -2,6 +2,9 @@ package com.mathematics.healix;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,9 +35,26 @@ public class Enter_weight extends AppCompatActivity {
 
 
         weightInput.requestFocus();
+        weightInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                String input = weightInput.getText().toString();
+                if (!input.isEmpty() && Integer.parseInt(input) > 0) {
+                    nextButton.setVisibility(View.VISIBLE);
+                } else {
+                    nextButton.setVisibility(View.INVISIBLE);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {}
+        });
 
 
-        nextButton.setOnClickListener(view -> startActivity(new Intent(Enter_weight.this,setting_up_data_page.class)));
+        nextButton.setOnClickListener(view -> startActivity(new Intent(Enter_weight.this, GoalsActivity.class)));
     }
 
 

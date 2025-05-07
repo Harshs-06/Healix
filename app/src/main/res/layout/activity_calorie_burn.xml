@@ -97,7 +97,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="120dp"/>
+            android:layout_height="100dp"/>
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/imageView"
@@ -108,7 +108,37 @@
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
             app:lottie_rawRes="@raw/calorie_animation" />
-
+        <LinearLayout
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="330dp"
+            android:layout_marginTop="40dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Calories Burned Based on Activities:"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="20dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+               android:gravity="center"
+                android:text="Walking (Moderate Pace): Burns around 100 calories per mile."
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="15dp"/><TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Running (Moderate Pace): Burns around 100 calories per mile."
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="15dp"/>
+        </LinearLayout>
 
     </LinearLayout>
 

@@ -7,9 +7,9 @@
         android:innerRadiusRatio="2.5"
         android:thickness="4dp"
         android:useLevel="true">
-<!--        <gradient-->
-<!--            android:startColor="@color/calorie_ring_start"-->
-<!--            android:endColor="@color/calorie_ring_end"-->
-<!--            android:type="sweep" />-->
+        <gradient
+            android:startColor="@color/calorie_ring_start"
+            android:endColor="@color/calorie_ring_end"
+            android:type="sweep" />
     </shape>
 </rotate> 

@@ -57,6 +57,18 @@ public class PackageAdapter extends RecyclerView.Adapter<PackageAdapter.PackageV
             context.startActivity(intent);
 
         });
+
+        holder.showallbutton.setOnClickListener(v -> {
+            Intent intent = new Intent(context , healthcheckup_seemore.class);
+            intent.putExtra("title",item.getTitle());
+            intent.putExtra("desc",item.getDesc());
+//            intent.putExtra("price",item.getActualPrice());
+
+            context.startActivity(intent);
+
+        });
+
+
         
 
         holder.favBtn.setOnClickListener(v -> {
@@ -81,7 +93,7 @@ public class PackageAdapter extends RecyclerView.Adapter<PackageAdapter.PackageV
 
         TextView title, desc, noOfTests, tat, actualPrice, totalPrice, discount;
         ImageButton favBtn;
-        MaterialButton bookbutton;
+        MaterialButton bookbutton,showallbutton;
 
         public PackageViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -94,6 +106,7 @@ public class PackageAdapter extends RecyclerView.Adapter<PackageAdapter.PackageV
             discount = itemView.findViewById(R.id.discount);
             favBtn = itemView.findViewById(R.id.favourite);
             bookbutton = itemView.findViewById(R.id.bookbutton);
+            showallbutton = itemView.findViewById(R.id.showallbutton);
 
         }
     }

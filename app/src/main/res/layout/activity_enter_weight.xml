@@ -63,6 +63,7 @@
         app:cardBackgroundColor="@color/blue"
         android:text="Next"
         android:layout_gravity="center"
+        android:visibility="invisible"
         android:fontFamily="@font/poppins_semibold"
         android:textColor="@color/white"
         android:textSize="20sp"

@@ -1,6 +1,7 @@
 package com.mathematics.healix;
 
 import android.content.Context;
+import android.content.Intent;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.StrikethroughSpan;
@@ -56,6 +57,16 @@ public class LabTestAdapter extends RecyclerView.Adapter<LabTestAdapter.LabTestV
             if(!isSelected){
                 Toast.makeText(v.getContext(),"Marked as favourite",Toast.LENGTH_SHORT).show();
             }
+        });
+
+        holder.bookButton.setOnClickListener(v -> {
+
+            Intent intent = new Intent(context, book_tests.class);
+            intent.putExtra("title",item.getTitle());
+            intent.putExtra("desc",item.getDescription());
+            intent.putExtra("price",item.getActualPrice());
+
+            context.startActivity(intent);
         });
 
         String totalPriceText = item.getTotalPrice();

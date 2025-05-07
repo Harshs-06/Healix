@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.mathematics.healix" />
+                  <option name="mobileSdkAppId" value="1:348166439924:android:3d496cc8a9c2077bc0afa1" />
+                  <option name="projectId" value="healix-80171" />
+                  <option name="projectNumber" value="348166439924" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
